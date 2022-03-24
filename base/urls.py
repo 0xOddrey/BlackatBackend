@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from backend import views as blackend_views
+from wtfBackend import views as blackend_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("backend.urls"))
+    path('', include("wtfBackend.urls"))
 ]

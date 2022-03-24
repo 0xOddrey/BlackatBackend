@@ -40,7 +40,7 @@ def WtfWordAPI(request, word):
 
 #this is second step when the actual csv is uploaded 
 def AddWords(request):
-    path3 = 'backend/files/web3_words.csv'
+    path3 = 'wtfBackend/files/web3_words.csv'
     with open(path3) as f:
         for line in f:
             line = line.split(',') 
