@@ -28,12 +28,14 @@ def generate_word_rec(word):
         trsfm=vectorizer.fit_transform(corpus)
         result = cosine_similarity(trsfm[0:1], trsfm)
         result = line.name,result[0][1]
+
         if result[1] > .10:
-            new_list.append(result[0])
+            new_list.append(result)
 
     new_list.sort(key=lambda x: x[1], reverse=True)
+
     if len(new_list) > 0:
-        return(new_list[0])
+        return(new_list[0][0])
     else:
         new_word = WtfWord.objects.all().order_by('?').first()
         return(new_word.name)
