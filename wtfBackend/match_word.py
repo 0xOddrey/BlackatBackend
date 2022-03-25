@@ -13,6 +13,7 @@ from nltk.stem import LancasterStemmer
 porter = PorterStemmer()
 
 def generate_word_rec(word):
+    
     all_words = WtfWord.objects.all()
     new_list = []
 

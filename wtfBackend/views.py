@@ -34,6 +34,7 @@ def Homepage(request):
     return render(request, "index.html")
 
 def WtfWordAPI(request, word):
+    print(word)
     rec_word = generate_word_rec(word)
     new_word = WtfWord.objects.filter(name=rec_word).first()
     context = {'word': new_word.name, "definition": new_word.definition}   

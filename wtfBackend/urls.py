@@ -26,7 +26,7 @@ urlpatterns = [
         views.AddWords, 
         name='add_words'),
 
-    url(r'wtf/(?P<word>[\w\d@\.-]+)/',
+    url(r'wtf/(?P<word>[\w\s\d@\.-]+)/',
         csrf_exempt(views.WtfWordAPI), 
         name='get_word'),
 
