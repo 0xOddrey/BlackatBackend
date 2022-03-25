@@ -24,6 +24,9 @@ import base64
 from io import BytesIO
 import csv, io
 import json
+from .match_word import *
+
+
 # Create your views here.
 #Homepage Landing Page
 def Homepage(request):
@@ -31,9 +34,8 @@ def Homepage(request):
     return render(request, "index.html")
 
 def WtfWordAPI(request, word):
-    new_word = WtfWord.objects.filter(name=word).first()
-    if new_word is None:
-        new_word = WtfWord.objects.all().order_by('?').first()
+    rec_word = generate_word_rec(word)
+    new_word = WtfWord.objects.filter(name=rec_word).first()
     context = {'word': new_word.name, "definition": new_word.definition}   
     return JsonResponse(context)
 
