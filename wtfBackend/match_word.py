@@ -8,10 +8,7 @@ import nltk
 
 from nltk.stem import PorterStemmer
 from nltk.stem import LancasterStemmer
-import spacy
-from spacy.lang.en import English
-from spacy.tokenizer import Tokenizer
-nlp=spacy.load("en_core_web_lg")
+
 
 porter = PorterStemmer()
 
